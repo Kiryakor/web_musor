@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<catalog>
+   <cd>
+     <title>Скоро зима</title>
+     <artist>Сергей Шнуров</artist>
+     <country>Россия</country>
+     <company>Медиа-групп</company>
+     <price>1000</price>
+     <year>2019</year>
+   </cd>
+
+   <cd>
+     <title>Аквариум</title>
+     <artist>Дельфин</artist>
+     <country>Россия</country>
+     <company>Медиа-групп</company>
+     <price>1200</price>
+     <year>2018</year>
+   </cd>
+   <cd>
+     <title>праздники</title>
+     <artist>Монеточка</artist>
+     <country>Россия</country>
+     <company>Урал</company>
+     <price>900</price>
+     <year>2019</year>
+   </cd>
+</catalog>

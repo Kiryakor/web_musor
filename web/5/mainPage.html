@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <title>Современные языки программирования</title>
+    <style>
+      table {
+        border-collapse: collapse; /*убираем пустые промежутки между ячейками*/
+        border: 1px solid grey; /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+        text-align: center;
+        table-layout: fixed; /* Фиксированная ширина ячеек */
+      }
+      th {
+        width: 100px;
+        height: 100px;
+      }
+      tr {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body style="background: linear-gradient(#fcfcfc, #e6eaf0);">
+  <h1>Современные языки программирования</h1>
+  <a style="font-size: 120%; color: #cd66cc" href="secondPage.html">Рейтинг самых популярных языков программирования</a>
+  <br>
+  <a href="js.html" style="font-size: 120%; color: #cd66cc">Работа с матрицей</a>
+  <br>
+  <a href="forma.html" style="font-size: 120%; color: #cd66cc">Добавить отзыв о языке программирования</a>
+  <br>
+  <a href="/cgi-bin/tutor5.py" style="font-size: 120%; color: #cd66cc">Отзывы о языках программирования !</a>
+  <br>
+  <a href="http://192.168.64.2/lab6.php" style="font-size: 120%; color: #cd66cc">База данных про Языки программирования</a>
+  <br>
+  <a href="http://192.168.64.2/lab61.php" style="font-size: 120%; color: #cd66cc">База данных про создателей языков программирования</a>
+  <br>
+
+  <h4>Языки программирования и их назначение</h4>
+
+  <div class="dropdown">
+    <span>1. Веб программирование</span>
+    <div class="dropdown-content">
+      <p>1.1 HTML</p>
+      <p>1.2 CSS</p>
+      <p>1.3 JavaScript</p>
+    </div>
+  </div>
+  <br>
+
+  <div class="dropdown">
+    <span>2. Разработка игр</span>
+    <div class="dropdown-content">
+      <p>2.1 C</p>
+      <p>2.2 C++</p>
+      <p>2.3 C#</p>
+      <p>2.4 Python</p>
+    </div>
+  </div>
+  <br>
+
+  <div class="dropdown">
+    <span>3. Мобильная разработка</span>
+    <div class="dropdown-content">
+      <p>3.1 Swift</p>
+      <p>3.2 Obj-c</p>
+      <p>3.3 Java</p>
+      <p>3.4 Kotlin</p>
+      <p>3.5 Dart</p>
+    </div>
+  </div>
+  <br>
+
+  <div class="dropdown">
+    <span>4. Анализ данных</span>
+    <div class="dropdown-content">
+      <p>4.1 R</p>
+      <p>4.2 Scala</p>
+      <p>4.3 Java</p>
+      <p>4.4 Python</p>
+    </div>
+  </div>
+  <br>
+
+  <div class="dropdown">
+    <span>5. Серверная разработка</span>
+    <div class="dropdown-content">
+      <p>5.1 PHP</p>
+      <p>5.2 Python</p>
+      <p>5.3 Java</p>
+      <p>5.4 C#</p>
+      <p>5.4 Scala</p>
+    </div>
+  </div>
+  <br>
+  <br>
+
+  <table border = 2 id="myTable">
+    <tr>
+      <th><img src="https://dev.by/storage/images/48/01/93/24/derived/dd227b198cc10e10b6d59122ff43d056.jpg" width="100"></th>
+      <th>Java</th>
+      <th>JavaScript</th>
+      <th>C#</th>
+      <th>Python</th>
+      <td>Удалить</td>
+    </tr>
+    <tr>
+      <td>Веб</td>
+      <td rowspan="2">⛔</td>
+      <td>✅</td>
+      <td colspan="2">⛔</td>
+      <td><input type="checkbox" /></td>
+    </tr>
+    <tr>
+      <td>Разработка игр</td>
+      <td>⛔</td>
+      <td colspan="2">✅</td>
+      <td><input type="checkbox" /></td>
+    </tr>
+    <tr>
+      <td>Мобильная разработка</td>
+      <td rowspan="3">✅</td>
+      <td colspan="3">⛔</td>
+      <td><input type="checkbox" /></td>
+    </tr>
+    <tr>
+      <td>Анализ данных</td>
+      <td colspan="2">⛔</td>
+      <td>✅</td>
+      <td><input type="checkbox" /></td>
+    </tr>
+    <tr>
+      <td>Серверная разработка</td>
+      <td>⛔</td>
+      <td colspan="2">✅</td>
+      <td><input type="checkbox" /></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+
+  <table border = 2 id="myTable2">
+    <tr >
+      <td><input name="someText"></td>
+      <td width="100"><input name="java" type="radio"></td>
+      <td width="100"><input name="js" type="radio"></td>
+      <td width="100"><input name="c#" type="radio"></td>
+      <td width="100"><input name="python" type="radio"></td>
+    </tr>
+  </table>
+
+  <br>
+
+  <a href="javascript://" onclick="addRow('myTable');return false;">Добавить строку</a>
+
+  <br>
+  <br>
+
+  <!-- footer -->
+  <button type="reset" onclick="alert('Автор: Корнющенков Кирилл 4831');">Информация о сайте</button>
+
+  <script>
+      Array.from(document.querySelectorAll('input[type="checkbox"]')).forEach(function(e) {
+        e.addEventListener('click', function() {
+          var a = this.closest('tr');
+          a.parentElement.removeChild(a);
+        });
+      });
+
+    function addRow(id){
+      var tbody = document.getElementById(id).getElementsByTagName("TBODY")[0];
+      var row = document.createElement("tr")
+      var td1 = document.createElement("TD")
+      td1.appendChild(document.createTextNode(document.getElementsByName("someText")[0].value))
+      var td2 = document.createElement("TD")
+      td2.appendChild (document.createTextNode(document.getElementsByName("java")[0].checked ? "✅" : "⛔"))
+      var td3 = document.createElement("TD")
+      td3.appendChild (document.createTextNode(document.getElementsByName("js")[0].checked ? "✅" : "⛔"))
+      var td4 = document.createElement("TD")
+      td4.appendChild (document.createTextNode(document.getElementsByName("c#")[0].checked ? "✅" : "⛔"))
+      var td5 = document.createElement("TD")
+      td5.appendChild (document.createTextNode(document.getElementsByName("python")[0].checked ? "✅" : "⛔"))
+
+      var td6 = document.createElement("TD");
+      var input = document.createElement('input');
+      input.type = "checkbox";
+      td6.appendChild(input)
+
+      row.appendChild(td1);
+      row.appendChild(td2);
+      row.appendChild(td3);
+      row.appendChild(td4);
+      row.appendChild(td5);
+      row.appendChild(td6);
+      tbody.appendChild(row);
+
+      Array.from(document.querySelectorAll('input[type="checkbox"]')).forEach(function(e) {
+          e.addEventListener('click', function() {
+            var a = this.closest('tr');
+            a.parentElement.removeChild(a);
+          });
+        });
+
+      document.getElementsByName("python")[0].checked = false;
+      document.getElementsByName("c#")[0].checked = false;
+      document.getElementsByName("js")[0].checked = false;
+      document.getElementsByName("java")[0].checked = false;
+      document.getElementsByName("someText")[0].value = "";
+    }
+  </script>
+
+
+</body>
+</html>

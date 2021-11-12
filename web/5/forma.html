@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Современный языки программирования</title>
+</head>
+<body style="background: linear-gradient(#fcfcfc, #e6eaf0);">
+    <h1>Современные языки программирования</h1>
+     <a style="font-size: 120%; color: #cd66cc" href="secondPage.html">Рейтинг самых популярных языков программирования</a>
+    <br>
+    <a href="js.html" style="font-size: 120%; color: #cd66cc">Работа с матрицей</a>
+    <br>
+    <a href="/cgi-bin/tutor5.py" style="font-size: 120%; color: #cd66cc">Отзывы о языках программирования</a>
+    <br>
+
+    <h3>Добавить отзыв</h3>
+    <hr>
+        <form method="get" action="/cgi-bin/tutor5.py">
+        <h3>Заполните форму и нажмите кнопку Отправить</h3>
+        <p>
+            <table>
+                <tr>
+                    <th align=right>ФИО автора:
+                    <td> <input type=text name=name>
+                <tr>
+                    <th align=right>Опыт программирования
+                    <td>
+                    <table>
+                        <td>
+                            <input type=radio name=shoesize value=маленький>Меньше года
+                        <td>
+                            <input type=radio name=shoesize value=средний>Меньше 5 лет
+                        <td>
+                            <input type=radio name=shoesize value=большой>Больше 5 лет
+                    </table>
+                <tr>
+                    <th align=right>Должность:
+                    <td>
+                        <select name=job>
+                            <option>младший разработчик
+                            <option>разработчик
+                            <option>старший разработчик
+                            <option>другое
+                        </select>
+                <tr>
+                    <th align=right>Любимый язык:
+                    <td>
+                    <table>
+                        <td>
+                            <input type=checkbox name=language value=Python>Python
+                        <td>
+                            <input type=checkbox name=language value=C>C
+                        <td>
+                            <input type=checkbox name=language value=php>php
+                    </table>
+                <tr>
+                    <th align=right>Комментарий:
+                    <td>
+                        <textarea name=comment cols=30 rows=2>введите текст</textarea>
+                <tr>
+                    <th align=right>Ссылка на изображения:
+                    <td>
+                        <textarea name=imagePath cols=30 rows=2>введите ссылку</textarea>
+                <tr>
+                    <td colspan=2 align=center>
+                    <input type=submit value="ОТПРАВИТЬ">
+            </table>
+        </form>
+    <hr>
+</body>
+</html>

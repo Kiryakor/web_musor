@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <title>Современные языки программирования</title>
+  </head>
+  <body style="background: linear-gradient(#fcfcfc, #e6eaf0);">
+      <h1>Современные языки программирования</h1>
+      <a href="mainPage.html" style="font-size: 25px; color: red">Главная страница навигации</a>
+      <br>
+      <a href="js.html" style="font-size: 25px; color: red">Работа с матрицей</a>
+      <br>
+      <br>
+      <p style="font-size: 5mm;">Рейтинг самых популярных языков программирования по версии
+        <a href="https://www.tiobe.com/tiobe-index/">TIOBE</a>
+      </p>
+      <p>
+        Язы́к программи́рования — формальный язык, предназначенный для записи компьютерных программ.
+        Язык программирования определяет набор лексических, синтаксических и семантических правил, определяющих внешний вид программы и действия, которые выполнит исполнитель (обычно — ЭВМ) под её управлением.
+        Со времени создания первых программируемых машин человечество придумало более восьми тысяч языков программирования (включая эзотерические, визуальные и игрушечные).
+        Каждый год их число увеличивается. Некоторыми языками умеет пользоваться только небольшое число их собственных разработчиков, другие становятся известны миллионам людей. Профессиональные программисты могут владеть несколькими языками программирования.
+        Язык программирования предназначен для написания компьютерных программ, которые представляют собой набор правил, позволяющих компьютеру выполнить тот или иной вычислительный процесс, организовать управление различными объектами, и т. п.
+        Язык программирования отличается от естественных языков тем, что предназначен для управления ЭВМ, в то время как естественные языки используются, прежде всего, для общения людей между собой.
+        Большинство языков программирования использует специальные конструкции для определения и манипулирования структурами данных и управления процессом вычислений.
+        Как правило, язык программирования определяется не только через спецификации стандарта языка, формально определяющие его синтаксис и семантику, но и через воплощения (реализации) стандарта — программные средства, обеспечивающих трансляцию или интерпретацию программ на этом языке;
+        такие программные средства различаются по производителю, марке и варианту (версии), времени выпуска, полноте воплощения стандарта, дополнительным возможностям;
+        могут иметь определённые ошибки или особенности воплощения, влияющие на практику использования языка или даже на его стандарт.
+      </p>
+      <div style="display:flex; justify-content: center;">
+        <form>
+            <input type="submit" value="Назад" name="back" onmouseout="right_arrow()"/>
+          <img src = "https://www.nmosktoday.ru/news_images/anons/49631.jpg" width = "300" height = "300" name="imgGallary" alt="img">
+          <input type="reset" value="Вперед"/ name="next" onmouseout="left_arrow()"/>
+          <p name="textGallary" style="display:flex; justify-content: center;">java</p>
+        </form>
+      </div>
+
+      <br>
+      <br>
+
+      <button type="reset" onclick="alert('Автор: Корнющенков Кирилл 4831');">Информация о сайте</button>
+
+      <script>
+        document.querySelector("form").addEventListener("submit", (event)=>{
+          event.preventDefault();
+          document.getElementsByName("back")[0].style.backgroundColor = '#' + (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
+        })
+
+        document.querySelector("form").addEventListener("reset", (event)=>{
+          event.preventDefault();
+          document.getElementsByName("next")[0].style.backgroundColor = '#' + (Math.random().toString(16) + '000000').substring(2,8).toUpperCase();
+        })
+
+        var mas = ["https://bestprogrammer.ru/wp-content/uploads/2020/08/C.jpg",
+                   "https://web-creator.ru/uploads/Page/19/python.svg",
+                   "https://www.nmosktoday.ru/news_images/anons/49631.jpg",
+                   "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png",
+                   "https://static.wikia.nocookie.net/wikies/images/4/43/Logo-csharp.png/revision/latest/scale-to-width-down/500?cb=20180617092325&path-prefix=ru",
+                   "https://upload.wikimedia.org/wikipedia/ru/9/9f/Visual_Basic_6_splash_screen_logo.png",
+                   "https://s3.amazonaws.com/s3.timetoast.com/public/uploads/photo/8139515/image/4904246afa2c813896535bf7a5d6778b",
+                   "https://web-creator.ru/uploads/Page/43/php.svg",
+                   "https://bugza.info/wp-content/uploads/2020/05/download.png",
+                  ];
+
+        var discription = ["C", "Python", "Java", "C++", "C#", "visual basic", "assembler", "php", "SQL"];
+
+        var to = -1;
+
+        var right_arrow = function() {
+          var obj = document.getElementsByName("imgGallary")[0];
+          var text = document.getElementsByName("textGallary")[0];
+
+          if (to < mas.length-1) {
+            to++
+          } else {
+            to = 0;
+          }
+          obj.src = mas[to];
+          text.innerText = `${discription[to]}\n`;
+        }
+
+          var left_arrow = function() {
+           var obj = document.getElementsByName("imgGallary")[0];
+           var text = document.getElementsByName("textGallary")[0];
+
+           if (to > 0) {
+             to--;
+           } else {
+             to = mas.length-1;
+           }
+           obj.src = mas[to];
+           text.innerText = `${discription[to]}\n`;
+         }
+      </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 transitional//EN" "http://www.w3.org/TR/HTML4.01/loose.dtd">
+<head>
+  <title>XMLHttpRequest</title>
+  <script type="text/javascript">
+    var req=false;
+    if(window.XMLHttpRequest) {
+      req=new XMLHttpRequest();
+    } else {
+        try {
+          req=new ActiveXObject('Msxml2.XMLHTTP');
+        } catch (e) {
+          req=new ActiveXObject('Microsoft.XMLHTTP');
+        }
+    }
+    if (!req) { // если объект XMLHttpRequest не поддерживается
+      alert('Объект XMLHttpRequest не поддерживается данным браузером');
+    }
+
+    function Load() {
+      if (!req) {
+        return;
+      }
+      let formData = new FormData(document.forms.request);
+      req.onreadystatechange = receive;
+      req.open("POST", 'lab6.php' , true); // открываем соединение
+      req.send(formData); // посылаем запрос серверу
+    }
+
+    function receive() { // получение данных от сервера
+      if (req.readyState == 4){ // если запрос завершен
+        if (req.status == 200) { // если запрос завершен без ошибок
+          document.getElementById('content').innerHTML = req.responseText;
+        } else {
+          alert('Error: '+ req.status+': \n' + req.statustext);
+        }
+      }
+    }
+  </script>
+</head>
+
+<!-- форма моя -->
+<form name="request">
+  <table>
+    <tr>
+        <th>id:</th>
+        <td><input type=text name="id_language"></td>
+    </tr>
+    <tr>
+        <th>Name: </th>
+        <td><input type=text name="Name"></td>
+    </tr>
+    <tr>
+        <th>Description:</th>
+        <td><input type=text name="Description"></td>
+    </tr>
+    <tr>
+        <th>Year of foundation:</th>
+        <td><input type=text name="Year"></td>
+    </tr>
+    <tr>
+        <th>Image path:</th>
+        <td><input type=text name="ImagePath"></td>
+    </tr>
+  </table>
+</form>
+
+<body>AJAX technology<br>
+  <input type="button" value="Get data from server" onclick="Load()"/>
+<br/>
+
+<div id='content'>anwer from server</div>
+
+</body> </html>

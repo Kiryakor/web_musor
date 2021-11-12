@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Js</title>
+  </head>
+  <body style="background: linear-gradient(#fcfcfc, #e6eaf0);">
+  <h1>Современные языки программирования</h1>
+  <a style="font-size: 120%; color: #cd66cc" href="secondPage.html">Рейтинг самых популярных языков программирования</a>
+  <br>
+  <a href="mainPage.html" style="font-size: 25px; color: red">Главная страница навигации</a>
+  <br>
+    <form>
+      <p>Введите матрицу:</p>
+      <textarea id="matrix" cols="30" rows="10"></textarea>
+      <p>Введите заданную величену:</p>
+      <input type="text" id="arg">
+
+      <button type="submit">Выполнить</button>
+      <button type="button" onclick="document.getElementById('arg').value = ''; document.getElementById('matrix').value = ''; document.querySelector('#output').innerHTML = ''">Очистить</button>
+      <button type="reset">Автоматически</button>
+
+      <p>Результат:</p>
+
+      <p id="output"></p>
+    </form>
+
+    <button type="reset" onclick="alert('Автор: Корнющенков Кирилл 4831');">Информация о сайте</button>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", (event)=>{
+        event.preventDefault();
+        showInput(1);
+      })
+
+      document.querySelector("form").addEventListener("reset", (event)=>{
+        event.preventDefault();
+        showInput(2);
+      })
+
+      function showInput(param) {
+        if (param == "2") {
+          //генерация
+          const matrix = document.querySelector("#matrix");
+          let genMatrix = "[";
+
+          for (var i = 0; i < 3; i++) {
+            genMatrix += "[";
+            for (var j = 0; j < 3; j++) {
+              if (j < 2) {
+                genMatrix += `${getRandomInt(9)}` + ', ';
+              } else {
+                genMatrix += `${getRandomInt(9)}`;
+              }
+            }
+            if (i < 2) {
+              genMatrix += "],";
+            } else {
+              genMatrix += "]";
+            }
+          }
+          genMatrix += "]";
+
+          matrix.value = `${genMatrix}\n`;
+
+          const arg = document.querySelector("#arg");
+          arg.value = `${getRandomInt(5)}\n`;
+        }
+
+        const matrix = document.querySelector("#matrix").value.split("\n");
+        const arg = parseInt(document.querySelector("#arg").value);
+
+        const output = document.querySelector("#output");
+        output.innerText = "";
+
+        let content = "";
+        let result = 0;
+
+        matrix.toString().replaceAll(",", "").replaceAll("[", "").replaceAll(" ", "").split("]").forEach((item, i) => {
+          let sum = 0;
+          let counter = 0;
+          item.split("").forEach((item, i) => {
+            sum += +item;
+            counter += 1;
+          });
+          if (arg > sum / counter) {
+            result += 1;
+          }
+        });
+
+        output.innerText = `${result}\n`;
+      }
+
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+    </script>
+  </body>
+</html>
